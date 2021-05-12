@@ -1,92 +1,115 @@
-body, ul, li, p{
+body{
     padding: 0px;
     margin: 0 auto;
     list-style: none;
-    font-family: sans-serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    background: linear-gradient(189deg, #87CEFA 0%, #00BFFF 100%);
 }   
 
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 
 
-#header{
+#app{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    min-height: 100%;
 }
 
-
+/* Estilização do box da esquerda */
 .box-left{
-    background-color:floralwhite;
+    background-color:#fff;
     width: 50%;
-    height: 600px;
-    margin-right: 10px;
+    height: 400px;
+    margin: 10px;
     border-radius:15px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);}
 
-.box-right{
-    background-color:floralwhite;
+ /* Titulo*/    
+ .box-left legend{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 10px;
+
+}  
+
+/*---- tamanho de input de valor e nome ---- */
+input#nome{
+        width: 80%;
+        margin-left: 10px;
+}
+    
+input#valor{
+        width: 30%;
+        margin-left: 40px;
+        margin-right: 20px;
+}
+
+/*  --- Posicionamento das divs de input e label --- */
+.labels{
+    display: flex;
+    justify-content: space-around;
+}
+.inputs{
+    display: flex;
+    justify-content: space-around;
+}    
+
+/* --- Estilização de do input de valor e nome --- */
+.box-left input#nome, input#valor  {
+  font-weight: 400;
+  font-size: 12px;
+  padding: 10px 15px;
+  border: 1px solid #a7a7a7;
+  border-radius: 5px;
+}
+
+
+  
+#box-right{
+    background-color:#fff;
     width: 50%;
-    height: 600px;
+    height: 400px;
+    margin: 10px;
     border-radius: 15px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-hr{
-    border-top: 2px solid #8c8b8b;
-    margin: 20px;
-    margin-top: 450px;
-}
 
+#total-box{
+    display: flex;
+    justify-content:flex-end;
+}
 .box-total{
-    background-color:floralwhite;
-    width: 98%;
-    height: 120px;   
-
+    background-color:#fff;
+    width: 48%;
+    margin-right: 10px;
+    height: 45px; 
+    border-radius: 15px;
+}
+h3{
+    margin-top: 10px;
+    margin-left: 5px;
 }
 
-.text{
-    border: 0 none;
-    width: 44%;
-    height: 30px;
-    margin-left: 70px; 
-    box-shadow: 5px 5px 5px rgba(0.3, 0.3, 0.3, 0.3);
-}
-.qtn{
-    border: 0 none;
-    height: 30px;
-    width: 23%;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-
-}
-
-
-.btn-adicionar{
+/* Botão adicionar */
+ input.btn{
     background-color: chartreuse;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 30px;
     margin-left: 70px;
-    width: 70%;
+    width: 75%;
     height: 50px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background linear 0.3s;
+    display: block;
 }
 
-#titles{
-    display: flex;
-    justify-content: space-between;
-}
 
-.title-1{
-    margin-top: 150px;
-    margin-left: 70px;
-}
-
-.title-2{
-    margin-top: 180px;
-    margin-right: 200px;
-}
-
-h1{
-    margin-left: 10px;
-}
 
 
 

@@ -9,26 +9,79 @@
     <title>Lista de compras</title>
 </head>
 <body>
-    <header id="header">
+    <header id="app">    
         <div class="box-left">
-            <div id="titles">
-                <h2 class="title-1">Nome do produto</h2>
-                <h2 class="title-2">Valor(R$)</h2>
-            </div>
-            
-            <input class="text" type="text" placeholder="nome do produto">
-
-            
-            <input class="qtn"  type="number" placeholder="valor do produto">
-            <button class="btn-adicionar">adicionar</button>
-        </div>
-        <div class="box-right">
-            <hr>
-                <div class="box-total">
-                    <h1>Total:</h1>
+                <legend>Lista de compras</legend>
+                   
+                <div class="labels">
+                    <label for="nome">Nome do produto</label>
+                    <label for="valor">Valor (R$)</label>
                 </div>
+                <div class="inputs">
+                    <input id="nome" type="text" placeholder="insira um produto"/>
+            <input   
+                type="number" 
+                step="0.01"
+                id="valor"
+                placeholder="valor do produto"
+                 />
+            </div>
+
+            <input
+                type="button"
+                class="btn"
+                id="adicionar"
+                value="Adicionar"
+            />
+        </div>
+        <div id="box-right"> 
         </div>
     </header>
+        <div id="total-box">
+            <div class="box-total">
+                <h3>Total: R$ <span id="total">0.00</span></h3>
+            </div>
+        </div>
+
+    <script>
+           
+            let nomes = []    
+
+    function adicionarProduto(){
+            let tituloProduto =  document.getElementById("nome").value
+            let valorProduto = Number(document.getElementById("valor").value);
+
+
+            if(tituloProduto == "" || valorProduto == ""){
+                alert("insira todos os campos do produto")
+                return;
+            }
+            
+            let nome ={                        
+                titulo :tituloProduto,
+                valor: valorProduto
+            }  
+            nomes.push(nome)
+
+            nomesListaHTML="<ul>";
+            for(let i = 0;i < nomes.length; i++){
+                nomesListaHTML += "<li>" + nomes[i].titulo + " - "+ " R$ " + nomes[i].valor;
+            }
+    
+            nomesListaHTML += "</ul>"
+
+            document.getElementById("box-right").innerHTML = nomesListaHTML;
+            document.getElementById("nome").value = "";
+            document.getElementById("valor").value = "";
+            }
+
+           
+     
+            let botao = document.getElementById("adicionar");
+            botao.addEventListener('click', adicionarProduto)
+    </script>
+
+
     
 </body>
 </html>
