@@ -42,46 +42,9 @@
                 <h3>Total: R$ <span id="total">0.00</span></h3>
             </div>
         </div>
-
-    <script>
-           
-            let nomes = []    
-
-    function adicionarProduto(){
-            let tituloProduto =  document.getElementById("nome").value
-            let valorProduto = Number(document.getElementById("valor").value);
+        
 
 
-            if(tituloProduto == "" || valorProduto == ""){
-                alert("insira todos os campos do produto")
-                return;
-            }
-            
-            let nome ={                        
-                titulo :tituloProduto,
-                valor: valorProduto
-            }  
-            nomes.push(nome)
-
-            nomesListaHTML="<ul>";
-            for(let i = 0;i < nomes.length; i++){
-                nomesListaHTML += "<li>" + nomes[i].titulo + " - "+ " R$ " + nomes[i].valor;
-            }
-    
-            nomesListaHTML += "</ul>"
-
-            document.getElementById("box-right").innerHTML = nomesListaHTML;
-            document.getElementById("nome").value = "";
-            document.getElementById("valor").value = "";
-            }
-
-           
-     
-            let botao = document.getElementById("adicionar");
-            botao.addEventListener('click', adicionarProduto)
-    </script>
-
-
-    
+        <script src="script.js"></script>
 </body>
 </html>
